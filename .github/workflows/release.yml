@@ -37,7 +37,6 @@ jobs:
         uses: ./helm-charts/.github/actions/chart-releaser-installer
       
       - name: Release Charts
-        working-directory: helm-charts
         env:
           CR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
