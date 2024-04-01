@@ -6,6 +6,13 @@ DEFAULT_CHART_RELEASER_VERSION=v1.6.1
 
 main() {
   local version="$DEFAULT_CHART_RELEASER_VERSION"
+  local install_dir=
+
+  if [[ -z "$install_dir" ]]; then
+    local arch
+    arch=$(uname -m)
+    install_dir="$RUNNER_TOOL_CACHE/cr/$version/$arch"
+  fi
 
   install_chart_releaser
 }
