@@ -37,11 +37,11 @@ jobs:
         uses: ./helm-charts/.github/actions/chart-releaser-installer
       
       - name: Release Charts
+        working-directory: helm-charts
         env:
           CR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cr version
-          cr package spiceai/deploy/chart
-          cd helm-charts
+          cr package ../spiceai/deploy/chart
           cr upload --owner spiceai --git-repo helm-charts --packages-with-index --token $CR_TOKEN --push --skip-existing
           cr index --owner spiceai --git-repo helm-charts  --packages-with-index --index-path . --token $CR_TOKEN --push
