@@ -44,4 +44,4 @@ jobs:
           cr package spiceai/deploy/chart
           cd helm-charts
           cr upload --owner spiceai --git-repo helm-charts --packages-with-index --token $CR_TOKEN --push --skip-existing
-          cr index --owner spiceai --git-repo helm-charts  --packages-with-index --index-path . --token <token> --push
+          cr index --owner spiceai --git-repo helm-charts  --packages-with-index --index-path . --token $CR_TOKEN --push
