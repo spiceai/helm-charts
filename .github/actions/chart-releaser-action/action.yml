@@ -30,6 +30,10 @@ inputs:
     description: The charts directory
     required: false
     default: charts
+  repo_dir:
+    description: The repo directory
+    required: false
+    default: .
   install_dir:
     description: "Where to install the cr tool"
     required: false
@@ -71,6 +75,8 @@ runs:
       run: |
         owner=$(cut -d '/' -f 1 <<< "$GITHUB_REPOSITORY")
         repo=$(cut -d '/' -f 2 <<< "$GITHUB_REPOSITORY")
+
+        cd "${{ inputs.repo_dir }}"
 
         args=(--owner "$owner" --repo "$repo")
         args+=(--charts-dir "${{ inputs.charts_dir }}")
