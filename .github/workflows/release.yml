@@ -11,7 +11,13 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout spiceai/helm-charts
+        uses: actions/checkout@v4
+        with:
+          path: helm-charts
+          fetch-depth: 0
+
+      - name: Checkout spiceai/spiceai
         uses: actions/checkout@v4
         with:
           repository: spiceai/spiceai
@@ -26,7 +32,7 @@ jobs:
         uses: azure/setup-helm@v4
 
       - name: Run chart-releaser
-        uses: ./.github/actions/chart-releaser-action
+        uses: ./helm-charts/.github/actions/chart-releaser-action
         with:
           charts_dir: deploy
         env:
