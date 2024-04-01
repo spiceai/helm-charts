@@ -20,6 +20,7 @@ jobs:
       - name: Checkout spiceai/spiceai
         uses: actions/checkout@v4
         with:
+          path: spiceai
           repository: spiceai/spiceai
           fetch-depth: 0
 
@@ -34,6 +35,6 @@ jobs:
       - name: Run chart-releaser
         uses: ./helm-charts/.github/actions/chart-releaser-action
         with:
-          charts_dir: deploy
+          charts_dir: spiceai/deploy
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
