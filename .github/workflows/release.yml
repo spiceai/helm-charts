@@ -36,6 +36,7 @@ jobs:
       - name: Run chart-releaser
         uses: ./helm-charts/.github/actions/chart-releaser-action
         with:
+          repo_dir: spiceai
           charts_dir: spiceai/deploy
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
