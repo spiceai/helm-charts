@@ -2,5 +2,5 @@
 
 ```bash
 helm repo add spiceai https://helm.spiceai.org
-helm upgrade --install spiceai spiceai/spiceai
+helm install spiceai spiceai/spiceai
 ```
