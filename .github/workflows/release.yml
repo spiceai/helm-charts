@@ -2,6 +2,12 @@ name: Release Charts
 
 on:
   workflow_dispatch:
+    inputs:
+      spiceai_branch:
+        description: 'Release branch in spiceai/spiceai'
+        required: true
+        default: 'release/1.X'
+        type: string
 
 jobs:
   release:
@@ -22,6 +28,7 @@ jobs:
         with:
           path: spiceai
           repository: spiceai/spiceai
+          ref: ${{ github.event.inputs.spiceai_branch }}
           fetch-depth: 0
 
       - name: Configure Git
@@ -35,7 +42,7 @@ jobs:
 
       - name: Install chart-releaser
         uses: ./helm-charts/.github/actions/chart-releaser-installer
-      
+
       - name: Release Charts
         working-directory: helm-charts
         env:
