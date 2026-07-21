@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   spiceai:
   - apiVersion: v2
+    created: "2026-07-21T23:04:26.191117761Z"
+    description: Spice.ai OSS
+    digest: 74a743c5c1aba3fb0149de8de1df9e71312327c1867cfed067b2a4ec838cd4c7
+    name: spiceai
+    urls:
+    - https://github.com/spiceai/helm-charts/releases/download/spiceai-2.1.1/spiceai-2.1.1.tgz
+    version: 2.1.1
+  - apiVersion: v2
     created: "2026-07-08T10:49:40.284632114Z"
     description: Spice.ai OSS
     digest: 0b50ad5aa6a419c805cb95fca62076610c1649dc6510110122da651e852cc63c
@@ -721,4 +729,4 @@ entries:
     urls:
     - https://github.com/spiceai/helm-charts/releases/download/spiceai-0.1.0/spiceai-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-08T10:49:40.284885728Z"
+generated: "2026-07-21T23:04:26.191452106Z"
