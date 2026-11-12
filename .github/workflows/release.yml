@@ -18,13 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout spiceai/helm-charts
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.4.0
         with:
           path: helm-charts
           fetch-depth: 0
 
       - name: Checkout spiceai/spiceai
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.4.0
         with:
           path: spiceai
           repository: spiceai/spiceai
@@ -38,7 +38,7 @@ jobs:
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
       - name: Install Helm
-        uses: azure/setup-helm@v4
+        uses: azure/setup-helm@v4.3.1
 
       - name: Install chart-releaser
         uses: ./helm-charts/.github/actions/chart-releaser-installer
